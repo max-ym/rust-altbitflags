@@ -1,0 +1,4 @@
+[package]
+name = "alt_bitflags"
+version = "0.1.0"
+authors = ["Max Naumchyk <max.naumch@gmail.com>"]
