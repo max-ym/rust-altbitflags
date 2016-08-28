@@ -3,6 +3,8 @@ If you need to create a lot of many-many-many bitfields in an intuitive way, che
 
 It is not a C-like bitfield structure generator. It's more like a bitmap where each bit has it's own name. If you need to change particular bits in integer numbers you may access them by functions that are generated with these macros.
 
+Documentation can be found [here](https://max-ym.github.io/rust-altbitflags/docs/altbitflags/)
+
 ## Demo
 ```rust
 // Make sure to write #[macro_use]!
