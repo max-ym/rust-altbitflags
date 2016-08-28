@@ -1,3 +1,47 @@
+//! This crate contains macros that make creating bitfields more intuitive.
+//!
+//! It is an alternative way of what 'Rust Compiler Team Bitflags' do.
+//! It is not similar to C bitflags but it may be a bit easier to read and use
+//! in some cases. Furthermore, this crate does not conflict with
+//! 'Rust Compiler Team Bitflags' and you can use both as it must be okay.
+//!
+//! # Example
+//! ```rust
+//! # #[macro_use]
+//! # extern crate alt_bitflags;
+//! #
+//! // Create some structure which will act like a bitfield structure.
+//! struct Something(i64);
+//!
+//! impl Something {
+//!
+//!     // Create ReadWrite flag called 'present' (or shorthand 'p').
+//!     // To set a value use 'set_p' or 'set_present'.
+//!     // Flag position is bit number 0.
+//!     flag_rw!(p, set_p, present, set_present, 0);
+//!
+//!     // Create ReadOnly flag 'extended' (and 'e') at position 1.
+//!     flag_ro!(e, extended, 1);
+//!
+//!     // Shorter version of a flag_rw! macro.
+//!     flag_rw!(a, set_a, 2);
+//!
+//!     // Shorter version of a flag_ro! macro.
+//!     flag_ro!(b, 3);
+//! }
+//!
+//! fn main() {
+//!     let mut something = Something(0);
+//!
+//!     // This means the same thing:
+//!     if (something.p()) { /* ... */ }
+//!     if (something.present()) { /* ... */ }
+//!
+//!     // As does this:
+//!     something.set_present(true);
+//!     something.set_p(true);
+//! }
+//! ```
 
 /// Create read-only flag.
 ///
