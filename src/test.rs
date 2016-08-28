@@ -1,5 +1,5 @@
 // Create some structure which will act like a bitfield structure in test.
-struct Something(u64);
+struct Something(i64);
 
 impl Something {
 
