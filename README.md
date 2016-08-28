@@ -38,5 +38,6 @@ fn some_fn() {
 
     // ...
 }
-
 ```
+
+This project still is under heavy developement and was not tested properly! Please, if you're interested, come back later. It'll be ready soon.
