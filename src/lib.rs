@@ -149,7 +149,7 @@ macro_rules! flag_rw {
         #[inline="always"]
         pub fn $set_name(&mut self, b: bool) {
             let x = b as i64;
-            self.0 ^= ((-x ^ self.0) & (1 << $pos));
+            self.0 ^= (-x ^ self.0) & (1 << $pos);
         }
     );
 
