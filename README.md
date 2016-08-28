@@ -35,8 +35,8 @@ fn some_fn() {
     let mut something = Something(0);
 
     // This means the same thing:
-    if (something.p) { /* ... */ }
-    if (something.present) { /* ... */ }
+    if (something.p()) { /* ... */ }
+    if (something.present()) { /* ... */ }
 
     // As does this:
     something.set_present(true);
