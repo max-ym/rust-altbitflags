@@ -13,13 +13,30 @@
 /// # Example
 ///
 /// ```
+/// # #![allow(unused_parens)]
+/// #[macro_use]
+/// extern crate alt_bitflags;
+///
+/// struct Something(u64);
+///
 /// impl Something {
-///     flag_ro!(p, present, 0);
+///     flag_ro!(present, 0);
+///     flag_ro!(tx, 1);
+///     flag_ro!(e, extended, 2);
 /// }
 ///
-/// if (something.present) { /* ... */ }
-/// if (something.p) { /* ... */ }
+/// fn main() {
+///     let mut something = Something(0);
+///
+///     if (something.present()) { /* ... */ }
+///     if (something.tx()) { /* ... */ }
+///
+///     // These do the same thing:
+///     if (something.e()) { /* ... */ }
+///     if (something.extended()) { /* ... */ }
+/// }
 /// ```
+#[macro_export]
 macro_rules! flag_ro {
     ($name:ident, $pos:expr) => (
         #[inline="always"]
@@ -46,19 +63,28 @@ macro_rules! flag_ro {
 /// # Example
 ///
 /// ```
+/// # #![allow(unused_parens)]
+/// #[macro_use]
+/// extern crate alt_bitflags;
+///
+/// struct Something(u64);
+///
 /// impl Something {
 ///     flag_rw!(present, set_present, 0);
-///     flag_rw!(e, extended, set_e, set_extended, 1);
+///     flag_rw!(e, set_e, extended, set_extended, 1);
 /// }
 ///
-/// if (something.present) { /* ... */ }
-/// if (something.p) { /* ... */ }
-/// if (something.e) { /* ... */ }
+/// fn main() {
+///     let mut something = Something(0);
 ///
-/// something.set_e(true);
-/// something.set_extended(true);
+///     if (something.present()) { /* ... */ }
+///     if (something.e()) { /* ... */ }
 ///
+///     something.set_e(true);
+///     something.set_extended(true);
+/// }
 /// ```
+#[macro_export]
 macro_rules! flag_rw {
     ($name:ident, $set_name:ident, $pos:expr) => (
         flag_ro!($name, $pos);
@@ -77,3 +103,6 @@ macro_rules! flag_rw {
         flag_rw!($full_name, $full_set_name, $pos);
     );
 }
+
+#[cfg(test)]
+mod test;
