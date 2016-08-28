@@ -48,5 +48,3 @@ fn some_fn() {
 
 ## Note
 This IS NOT a clone of "rust bitflags" crate. It is though my own alternative view of how bitflags in rust must be and I believe that in some cases this version is more apropriate and easier to use and understand. Furthermore, it does not conflict with bitflags from rust compiler. You can use both and it must be okay.
-
-This project still is under heavy developement and was not tested properly! Please, if you're interested, come back later. It'll be ready soon.
