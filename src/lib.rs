@@ -1,14 +1,16 @@
 
 /// Create read-only flag.
 ///
-/// It accepts an name argument, optional full name argument and a number,
+/// It accepts a name argument, optional full name argument and a number,
 /// which indicates the bit number with required flag.
 ///
 /// Later, the given flag can be accessed either by short or full name
-/// like with a normal function.
+/// in a form of a normal function.
 ///
 /// It will work only if it's put in a structure implementation
-/// where integer number with fields can be accessed with `self.0'.
+/// where integer number with bit fields can be accessed with `self.0'.
+///
+/// ReadOnly flags accepts `self.0' to be of any integer type.
 ///
 /// # Example
 ///
@@ -59,6 +61,8 @@ macro_rules! flag_ro {
 ///
 /// It will work only if it's put in a structure implementation
 /// where integer number with fields can be accessed with `self.0'.
+///
+/// Currently, `self.0' must be of type `i64'.
 ///
 /// # Example
 ///
