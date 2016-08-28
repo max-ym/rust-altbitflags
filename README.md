@@ -1,9 +1,9 @@
 # alt_bitflags
 If you need to create a lot of many-many-many bitfields in an intuitive way, check out some of these macro.
 
-Note that it IS NOT a clone of "rust bitfields" crate. It is though my own alternative view of how bitfields in rust must be and I believe that in some cases it's more apropriate and easier to use (and understand). Or maybe I just didn't pay much effort to learn the original bitfields whatsoever :)
+Note that this IS NOT a clone of "rust bitflags" crate. It is though my own alternative view of how bitflags in rust must be and I believe that in some cases this version is more apropriate and easier to use and understand.
 
-It is not C-like bitfield structure generator. It's more like a named bitmap. Still, if you need to change often single bits in integer numbers you may access them by functions that are generated with these macros.
+It is not a C-like bitfield structure generator. It's more like a named bitmap. Still, if you need to change often single bits in integer numbers you may access them by functions that are generated with these macros.
 
 ## Demo
 ```rust
@@ -23,6 +23,12 @@ impl Something {
 
     // Create ReadOnly flag 'extended' (and 'e') at position 1.
     flag_ro!(e, extended, 1);
+
+    // Shorter version of a flag_rw! macro.
+    flag_rw!(a, set_a, 2);
+
+    // Shorter version of a flag_ro! macro.
+    flag_ro!(b, 3);
 }
 
 fn some_fn() {
