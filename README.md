@@ -10,14 +10,14 @@ It is not a C-like bitfield structure generator. It's more like a named bitmap. 
 extern crate alt_bitflags;
 
 // Create some structure which will act like a bitfield structure.
-struct Something(u64);
+struct Something(i64);
 
 impl Something {
 
     // Create ReadWrite flag called 'present' (or shorthand 'p').
     // To set a value use 'set_p' or 'set_present'.
     // Flag position is bit number 0.
-    flag_rw!(p, present, set_p, set_present, 0);
+    flag_rw!(p, set_p, present, set_present, 0);
 
     // Create ReadOnly flag 'extended' (and 'e') at position 1.
     flag_ro!(e, extended, 1);
