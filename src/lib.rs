@@ -1,4 +1,4 @@
-//! This crate contains macros that make creating bitfields more intuitive.
+//! This crate contains macros that makes creating bitfields more intuitive.
 //!
 //! It is an alternative way of what 'Rust Compiler Team Bitflags' do.
 //! It is not similar to C bitflags but it may be a bit easier to read and use
@@ -52,9 +52,9 @@
 /// in a form of a normal function.
 ///
 /// It will work only if it's put in a structure implementation
-/// where integer number with bit fields can be accessed with 'self.0'.
+/// where integer number with bit fields can be accessed with `self.0`.
 ///
-/// ReadOnly flags accepts 'self.0' to be of any integer type.
+/// ReadOnly flags accepts `self.0` to be of any integer type.
 ///
 /// # Example
 ///
@@ -108,9 +108,9 @@ macro_rules! flag_ro {
 /// like with a normal function.
 ///
 /// It will work only if it's put in a structure implementation
-/// where integer number with fields can be accessed with 'self.0'.
+/// where integer number with fields can be accessed with `self.0`.
 ///
-/// Currently, 'self.0' must be of type 'i64'.
+/// Currently, `self.0` must be of type `i64`.
 ///
 /// # Example
 ///
