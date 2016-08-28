@@ -7,14 +7,16 @@ It is not C-like bitfield structure generator. It's more like a named bitmap. St
 
 ## Demo
 ```rust
+// Make sure to write #[macro_use]!
 #[macro_use]
 extern crate alt_bitflags;
 
+// Create some structure which will act like a bitfield structure.
 struct Something(u32);
 
 impl Something {
 
-    // Create ReadWrite flag called 'present' (or shorthand 'p").
+    // Create ReadWrite flag called 'present' (or shorthand 'p').
     // To set a value use 'set_p' or 'set_present'.
     // Flag position is bit number 0.
     flag_rw!(p, present, set_p, set_present, 0);
@@ -40,4 +42,5 @@ fn some_fn() {
 }
 ```
 
+## Note
 This project still is under heavy developement and was not tested properly! Please, if you're interested, come back later. It'll be ready soon.
