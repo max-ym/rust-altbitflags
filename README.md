@@ -1,4 +1,4 @@
-# alt_bitflags
+# altbitflags
 If you need to create a lot of many-many-many bitfields in an intuitive way, check out some of these macro.
 
 It is not a C-like bitfield structure generator. It's more like a named bitmap. Still, if you need to change often single bits in integer numbers you may access them by functions that are generated with these macros.
@@ -7,7 +7,7 @@ It is not a C-like bitfield structure generator. It's more like a named bitmap. 
 ```rust
 // Make sure to write #[macro_use]!
 #[macro_use]
-extern crate alt_bitflags;
+extern crate altbitflags;
 
 // Create some structure which will act like a bitfield structure.
 struct Something(i64);

@@ -8,7 +8,7 @@
 //! # Example
 //! ```rust
 //! # #[macro_use]
-//! # extern crate alt_bitflags;
+//! # extern crate altbitflags;
 //! #
 //! // Create some structure which will act like a bitfield structure.
 //! struct Something(i64);
@@ -61,7 +61,7 @@
 /// ```
 /// # #![allow(unused_parens)]
 /// #[macro_use]
-/// extern crate alt_bitflags;
+/// extern crate altbitflags;
 ///
 /// struct Something(i64);
 ///
@@ -117,7 +117,7 @@ macro_rules! flag_ro {
 /// ```
 /// # #![allow(unused_parens)]
 /// #[macro_use]
-/// extern crate alt_bitflags;
+/// extern crate altbitflags;
 ///
 /// struct Something(i64);
 ///

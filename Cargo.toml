@@ -1,14 +1,14 @@
 [package]
-name = "alt_bitflags"
+name = "altbitflags"
 version = "0.1.0"
 authors = ["Max Naumchyk <max.naumch@gmail.com>"]
 
 description = "Macros to implement a struct which behave similar to bitflags"
 
-repository = "https://github.com/max-ym/alt-bitflags"
+repository = "https://github.com/max-ym/rust-altbitflags"
 keywords = ["bitfields", "bitflags", "flags", "bitmap"]
 license = "Unlicense"
 
 [lib]
-name = "alt_bitflags"
+name = "altbitflags"
 crate-type = ["rlib"]
