@@ -84,6 +84,7 @@ macro_rules! flag_ro {
 ///     if (something.present()) { /* ... */ }
 ///     if (something.e()) { /* ... */ }
 ///
+///     // These do the same thing:
 ///     something.set_e(true);
 ///     something.set_extended(true);
 /// }
