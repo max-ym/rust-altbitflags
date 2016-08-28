@@ -10,7 +10,7 @@ It is not a C-like bitfield structure generator. It's more like a named bitmap. 
 extern crate alt_bitflags;
 
 // Create some structure which will act like a bitfield structure.
-struct Something(u32);
+struct Something(u64);
 
 impl Something {
 
