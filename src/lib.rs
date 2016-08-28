@@ -69,6 +69,10 @@
 ///     flag_ro!(present, 0);
 ///     flag_ro!(tx, 1);
 ///     flag_ro!(e, extended, 2);
+///
+///     // It is okay to define different functions for a single bit:
+///     flag_ro!(some, 3);
+///     flag_ro!(some_bit, 3);
 /// }
 ///
 /// fn main() {
@@ -120,6 +124,10 @@ macro_rules! flag_ro {
 /// impl Something {
 ///     flag_rw!(present, set_present, 0);
 ///     flag_rw!(e, set_e, extended, set_extended, 1);
+///
+///     // It is okay to define different functions for a single bit:
+///     flag_rw!(a, set_a, 2);
+///     flag_rw!(b, set_b, 2);
 /// }
 ///
 /// fn main() {
