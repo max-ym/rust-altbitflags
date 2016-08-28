@@ -8,3 +8,7 @@ description = "Macros to implement a struct which behave similar to bitflags"
 repository = "https://github.com/max-ym/alt-bitflags"
 keywords = ["bitfields", "bitflags", "flags", "bitmap"]
 license = "Unlicense"
+
+[lib]
+name = "alt_bitflags"
+crate-type = ["rlib"]
